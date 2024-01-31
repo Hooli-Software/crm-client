@@ -1,0 +1,29 @@
+.wrapper
+{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.container
+{
+    position: relative;
+    height: 100%;
+    max-width: 448px;
+    margin: 0 auto;
+
+}
+
+.feed
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+
+    &Signals
+    {
+        overflow: hidden;
+    }
+}

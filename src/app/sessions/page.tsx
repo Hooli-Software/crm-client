@@ -1,4 +1,5 @@
 "use client"
+import { useRef, useEffect } from "react"
 import {
     Box,
     Card,
@@ -11,10 +12,16 @@ import css from "./page.module.scss"
 
 
 export default function SessionFeedPage() {
+    const feedSignals = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        feedSignals.current?.scrollTo(0, feedSignals.current.scrollHeight)
+    }, [])
+
     return <Box className={css.wrapper}>
         <Box className={css.container}>
             <Box className={css.feed} py='3'>
-                <ScrollArea scrollbars="vertical" className={css.feedSignals}>
+                <ScrollArea mt='3' ref={feedSignals} scrollbars="vertical" className={css.feedSignals}>
                     <Box mx='3'>
                         <Text>
                             Session started at 12:02pm

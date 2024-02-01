@@ -2,15 +2,12 @@
 import { useRef, useEffect } from "react"
 import {
     Box,
-    IconButton,
-    Flex,
     ScrollArea,
-    TextField,
 } from "@radix-ui/themes"
-import { ChatBubbleIcon, PaperPlaneIcon } from "@radix-ui/react-icons"
 
 import css from "./page.module.scss"
 import Signal from './Signal'
+import PanelInput from './PanelInput'
 
 
 export default function SessionFeedPage() {
@@ -52,17 +49,7 @@ export default function SessionFeedPage() {
                         />
                     </Box>
                 </ScrollArea>
-                <Flex p="3" gap='2' className={css.panelInput}>
-                    <TextField.Root className={css.panelInputField}>
-                        <TextField.Slot>
-                            <ChatBubbleIcon height="16" width="16" />
-                        </TextField.Slot>
-                        <TextField.Input placeholder="Signal…" />
-                    </TextField.Root>
-                    <IconButton>
-                        <PaperPlaneIcon />
-                    </IconButton>
-                </Flex>
+                <PanelInput/>
             </Box>
         </Box>
     </Box>

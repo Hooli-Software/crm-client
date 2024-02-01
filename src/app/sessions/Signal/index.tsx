@@ -1,3 +1,4 @@
+import { memo } from "react"
 import {
     Box,
     Flex,
@@ -17,7 +18,7 @@ export interface ISignal {
 }
 
 
-export default function Signal(props: ISignal) {
+function Signal(props: ISignal) {
     return <Flex m='3' mb='5' align='center' gap='4'>
         <Box>
             {
@@ -65,3 +66,6 @@ export default function Signal(props: ISignal) {
         </Box>
     </Flex>
 }
+
+
+export default memo(Signal)

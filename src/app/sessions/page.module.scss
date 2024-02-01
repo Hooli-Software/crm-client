@@ -9,7 +9,7 @@
 {
     position: relative;
     height: 100%;
-    max-width: 448px;
+    max-width: 496px;
     margin: 0 auto;
 
 }
@@ -25,5 +25,13 @@
     &Signals
     {
         overflow: hidden;
+    }
+}
+
+.panelInput
+{
+    &Field
+    {
+        width: 100%;
     }
 }

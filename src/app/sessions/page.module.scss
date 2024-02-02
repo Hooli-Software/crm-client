@@ -9,13 +9,21 @@
 {
     position: relative;
     height: 100%;
-    max-width: 496px;
     margin: 0 auto;
+    width: fit-content;
+    display: flex;
+    max-width: 892px;
+    width: 100%;
+}
 
+.brief
+{
+    width: 45%;
 }
 
 .feed
 {
+    width: 55%;
     height: 100%;
     display: flex;
     flex-direction: column;

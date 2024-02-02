@@ -6,6 +6,7 @@ import {
 } from "@radix-ui/themes"
 
 import css from "./page.module.scss"
+import Brief from './Brief'
 import Signal from './Signal'
 import PanelInput from './PanelInput'
 
@@ -19,6 +20,9 @@ export default function SessionFeedPage() {
 
     return <Box className={css.wrapper}>
         <Box className={css.container}>
+            <Box className={css.brief} m='3' my='5'>
+                <Brief/>
+            </Box>
             <Box className={css.feed} py='3'>
                 <ScrollArea mt='3' ref={feedSignals} scrollbars="vertical" size='1' className={css.feedSignals}>
                     <Box pr='3'>

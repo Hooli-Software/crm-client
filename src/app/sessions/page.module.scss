@@ -1,3 +1,5 @@
+@import '@mixins';
+
 .wrapper
 {
     position: fixed;
@@ -14,11 +16,21 @@
     display: flex;
     max-width: 892px;
     width: 100%;
+
+    @include tablet
+    {
+        max-width: 448px;
+    }
 }
 
 .brief
 {
     width: 45%;
+
+    @include tablet
+    {
+        display: none;
+    }
 }
 
 .feed
@@ -29,6 +41,11 @@
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+
+    @include tablet
+    {
+        width: 100%;
+    }
 
     &Signals
     {

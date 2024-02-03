@@ -17,7 +17,7 @@ import css from './index.module.scss'
 
 export function Brief() {
     return <>
-        <Card mb='5'>
+        <Card className={css.card} mb='5'>
             <Box p='3'>
                 <Text align='center' size='7' as="p" mb='5'>
                     <LapTimerIcon fontSize='32' />
@@ -25,7 +25,7 @@ export function Brief() {
                     11 : 00 : 00
                 </Text>
                 <Table.Root mb='5'>
-                    <Table.Body>
+                    <Table.Body className={css.table}>
                         <Table.Row>
                             <Table.RowHeaderCell>Order</Table.RowHeaderCell>
                             <Table.Cell justify='end'>Ursas Planet #321</Table.Cell>
@@ -35,7 +35,7 @@ export function Brief() {
                             <Table.Cell justify='end'>
                                 12 : 00
                                 &nbsp;
-                                <LapTimerIcon/>
+                                <LapTimerIcon />
                             </Table.Cell>
                         </Table.Row>
                         <Table.Row>
@@ -43,7 +43,7 @@ export function Brief() {
                             <Table.Cell justify='end'>
                                 12 : 00
                                 &nbsp;
-                                <LapTimerIcon/>
+                                <LapTimerIcon />
                             </Table.Cell>
                         </Table.Row>
                     </Table.Body>
@@ -55,16 +55,28 @@ export function Brief() {
                         style={{ transform: `translateX(-${50}%)` }}
                     />
                 </Progress.Root>
+                <Button
+                    mt='5'
+                    className={css.buttonEndSessionTablet}
+                    size='3'
+                    variant="ghost"
+                    color="red"
+                    style={{ width: '100%' }}
+                >
+                    <HandIcon />
+                    End session
+                </Button>
             </Box>
         </Card>
         <Box px='3'>
             <Button
+                className={css.buttonEndSession}
                 size='3'
                 variant="ghost"
                 color="red"
-                style={{width: '100%'}}
+                style={{ width: '100%' }}
             >
-                <HandIcon/>
+                <HandIcon />
                 End session
             </Button>
         </Box>

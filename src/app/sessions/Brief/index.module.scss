@@ -1,3 +1,37 @@
+@import '@mixins';
+
+.card
+{
+    
+    @include tablet
+    {
+        background: #18191b;
+    }
+}
+
+.table
+{
+    --table-row-box-shadow: none;
+}
+
+.buttonEndSession
+{
+    @include tablet
+    {
+        display: none;
+
+        &Tablet
+        {
+            display: flex !important;
+        }
+    }
+
+    &Tablet
+    {
+        display: none;
+    }
+}
+
 .progressRoot {
     position: relative;
     overflow: hidden;

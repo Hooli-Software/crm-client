@@ -1,14 +1,18 @@
 import { memo } from "react"
 
 import {
+    Box,
     Tabs,
-    Text,
 } from "@radix-ui/themes"
+
+import TableSessions from './Table'
 
 
 function TabSessions() {
     return <Tabs.Content value="sessions">
-        <Text size="2">Session table will be here...</Text>
+        <Box my='4'>
+            <TableSessions/>
+        </Box>
     </Tabs.Content>
 }
 

@@ -13,7 +13,7 @@ import TabSessions from "./TabSessions";
 
 export default function SessionListPage() {
     return <Container p='3' py='5' size='3'>
-        <Tabs.Root defaultValue="account">
+        <Tabs.Root defaultValue="sessions">
             <Tabs.List>
                 <Tabs.Trigger value="sessions">Sessions</Tabs.Trigger>
                 {

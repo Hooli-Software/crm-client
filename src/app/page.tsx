@@ -1,14 +1,22 @@
 import Link from "next/link";
 
+import {
+  Container,
+  Heading
+} from "@radix-ui/themes";
+
+
 export default function Home() {
   return (
     <main>
-      <h1>
-        Hello, Hooli Software!
-      </h1>
-      <ul>
-        <li><Link href='/sessions'>Session feed page</Link></li>
-      </ul>
+      <Container p='3' my='5'>
+        <Heading size='6'>
+          Hello, Hooli Software!
+        </Heading>
+        <ul>
+          <li><Link href='/sessions'>Session feed page</Link></li>
+        </ul>
+      </Container>
     </main>
   );
 }

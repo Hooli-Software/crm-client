@@ -1,6 +1,7 @@
 "use client"
 import { useRef, useEffect, useState } from "react"
 import {
+    AlertDialog,
     Box,
     IconButton,
     ScrollArea,
@@ -11,6 +12,7 @@ import css from "./page.module.scss"
 import Brief from './Brief'
 import Signal from './Signal'
 import PanelInput from './PanelInput'
+import DialogEndSession from "@/app/sessions/DialogEndSession"
 
 
 export default function SessionFeedPage() {

@@ -15,7 +15,8 @@ function TableColumnHeaderCell(props: IColumn) {
                 <Select.Root defaultValue="all">
                     <Select.Trigger variant="ghost"/>
                     <Select.Content>
-                        <Select.Item value="all">Ursas Planet</Select.Item>
+                    <Select.Item value="all">Project</Select.Item>
+                        <Select.Item value="5">Ursas Planet</Select.Item>
                         <Select.Item value="1">Kleewish</Select.Item>
                         <Select.Item value="2">HooliCRM</Select.Item>
                         <Select.Item value="3">HooliCRM</Select.Item>

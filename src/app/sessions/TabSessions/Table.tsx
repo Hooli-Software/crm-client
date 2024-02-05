@@ -5,6 +5,7 @@ import {
 } from "@radix-ui/themes"
 
 import {columns, sessions} from './fixtures'
+import TableColumnHeaderCell from "./TableColumnHeaderCell"
 
 
 export function TableSessions() {
@@ -13,9 +14,7 @@ export function TableSessions() {
             <Table.Row>
                 {
                     columns.map(column=>
-                        <Table.ColumnHeaderCell key={column.value} align={column.align}>
-                            {column.title}
-                        </Table.ColumnHeaderCell>                    
+                        <TableColumnHeaderCell key={column.value} {...column}/>
                     )
                 }
             </Table.Row>
@@ -30,7 +29,7 @@ export function TableSessions() {
                                 <Table.Cell key={column.value} align={column.align}>
                                     {
                                         column.formatFunc ?
-                                            column.formatFunc(session[column.value]) :
+                                            column.formatFunc(session) :
                                             session[column.value]
                                     }
                                 </Table.Cell>

@@ -1,4 +1,12 @@
 import { Link } from "@radix-ui/themes"
+import moment from "moment"
+import {
+    Button
+} from "@radix-ui/themes"
+import {
+    PlayIcon
+} from "@radix-ui/react-icons"
+
 
 
 interface ISession
@@ -6,12 +14,14 @@ interface ISession
     id: number
     order: string
     created: string
+    active?: boolean
 }
 
-interface IColumn {
+export interface IColumn {
     title: string,
     value: keyof ISession,
     formatFunc?: (_: any) => any
+    filtered?: boolean
     align?: 'left'|'right'|'center'
 }
 
@@ -20,11 +30,27 @@ const columns: IColumn[] = [
     {
         title: 'ID',
         value: 'id',
-        formatFunc: (val) => <Link href={`sessions/${val}/`}>#{val}</Link>
+        formatFunc: (session: ISession) => <Link href={`sessions/${session.id}/`}>
+            {
+                session.active ?
+                    <Button
+                        variant="soft"
+                        color="green"
+                    >
+                        #{session.id}
+                        <PlayIcon/>
+                    </Button>
+                    :
+                    <>
+                        #{session.id}
+                    </>
+            }
+        </Link>
     },
     {
         title: 'Order',
-        value: 'order'
+        value: 'order',
+        filtered: true
     },
     {
         title: 'Created',
@@ -37,17 +63,18 @@ const sessions: ISession[] = [
     {
         id: 357,
         order: 'Ursas Planet #123',
-        created: '1 day ago'
+        created: moment("2024-02-05, 17:00:00", "YYYY-MM-DD, h:mm:ss").fromNow(),
+        active: true
     },
     {
         id: 346,
         order: 'Kleewish #12',
-        created: '2 days ago'
+        created: moment("2024-02-05, 12:00:00", "YYYY-MM-DD, h:mm:ss").fromNow()
     },
     {
         id: 341,
         order: 'HooliCRM #922',
-        created: '2 days ago'
+        created: moment("2024-02-05, 17:00:00", "YYYY-MM-DD, h:mm:ss").fromNow()
     },
 ]
 

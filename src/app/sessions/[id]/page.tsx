@@ -5,7 +5,7 @@ import {
     IconButton,
     ScrollArea,
 } from "@radix-ui/themes"
-import { ChevronDownIcon } from "@radix-ui/react-icons"
+import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons"
 
 import css from "./page.module.scss"
 import Brief from './Brief'
@@ -67,7 +67,12 @@ export default function SessionFeedPage() {
             variant="soft"
             color="gray"
         >
-            <ChevronDownIcon height={24} width={24}/>
+            {
+                isBriefActive ?
+                    <ChevronUpIcon height={24} width={24}/>
+                :
+                    <ChevronDownIcon height={24} width={24}/>
+            }
         </IconButton>
     </> 
 }

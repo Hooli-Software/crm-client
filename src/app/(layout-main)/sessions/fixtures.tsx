@@ -7,6 +7,7 @@ import {
     PlayIcon
 } from "@radix-ui/react-icons"
 
+import { IColumn } from "@/components/Table"
 
 
 interface ISession
@@ -17,16 +18,8 @@ interface ISession
     active?: boolean
 }
 
-export interface IColumn {
-    title: string,
-    value: keyof ISession,
-    formatFunc?: (_: any) => any
-    filtered?: boolean
-    align?: 'left'|'right'|'center'
-}
 
-
-const columns: IColumn[] = [
+const columns: IColumn<ISession>[] = [
     {
         title: 'ID',
         value: 'id',

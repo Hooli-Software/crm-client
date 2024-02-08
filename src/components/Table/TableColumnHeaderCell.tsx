@@ -5,11 +5,11 @@ import {
     Table,
 } from "@radix-ui/themes"
 
-import { IColumn } from "./fixtures"
+import { IColumn } from "./index"
 
 
-function TableColumnHeaderCell(props: IColumn) {
-    return <Table.ColumnHeaderCell key={props.value} align={props.align}>
+function TableColumnHeaderCell(props: IColumn<any>) {
+    return <Table.ColumnHeaderCell align={props.align}>
         {
             props.filtered ?
                 <Select.Root defaultValue="all">

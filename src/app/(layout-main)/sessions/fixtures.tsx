@@ -30,22 +30,30 @@ const columns: IColumn[] = [
     {
         title: 'ID',
         value: 'id',
-        formatFunc: (session: ISession) => <Link href={`sessions/${session.id}/`}>
-            {
-                session.active ?
-                    <Button
-                        variant="soft"
-                        color="green"
-                    >
-                        #{session.id}
-                        <PlayIcon/>
-                    </Button>
+        formatFunc: (session: ISession) => 
+            <Link
+                href={
+                    session.active ?
+                        `sessions/feed/${session.id}/`
                     :
-                    <>
-                        #{session.id}
-                    </>
-            }
-        </Link>
+                        `sessions/${session.id}/`
+                }
+            >
+                {
+                    session.active ?
+                        <Button
+                            variant="soft"
+                            color="green"
+                        >
+                            #{session.id}
+                            <PlayIcon/>
+                        </Button>
+                        :
+                        <>
+                            #{session.id}
+                        </>
+                }
+            </Link>
     },
     {
         title: 'Order',
@@ -76,6 +84,16 @@ const sessions: ISession[] = [
         order: 'HooliCRM #922',
         created: moment("2024-02-05, 17:00:00", "YYYY-MM-DD, h:mm:ss").fromNow()
     },
+    {
+        id: 331,
+        order: 'Kleewish #11',
+        created: moment("2024-02-04, 12:00:00", "YYYY-MM-DD, h:mm:ss").fromNow()
+    },
+    {
+        id: 320,
+        order: 'HooliCRM #921',
+        created: moment("2024-02-04, 17:00:00", "YYYY-MM-DD, h:mm:ss").fromNow()
+    }
 ]
 
 

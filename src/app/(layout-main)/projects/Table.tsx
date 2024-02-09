@@ -7,7 +7,7 @@ import Pagination from "@/components/Pagination"
 import Table from "@/components/Table"
 
 
-export function TableCustomers() {
+export function TableProjects() {
     return <>
         <Table
             columns={columns}
@@ -18,4 +18,4 @@ export function TableCustomers() {
 }
 
 
-export default memo(TableCustomers)
+export default memo(TableProjects)

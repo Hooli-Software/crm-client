@@ -1,8 +1,8 @@
 'use client'
 
-import TableSessions from "./Table";
+import Table from "./Table";
 
 
 export default function SessionListPage() {
-    return <TableSessions/>
+    return <Table/>
 }

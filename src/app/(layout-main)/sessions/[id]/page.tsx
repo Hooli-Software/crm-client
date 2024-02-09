@@ -131,19 +131,23 @@ export default function SessionDetailPage() {
                     <Table.Root variant="surface">
                         <Table.Body>
                             <Table.Row>
+                                <Table.RowHeaderCell>Date created</Table.RowHeaderCell>
+                                <Table.Cell align="right">2 July, 2023 <Text color="gray">(5 days ago)</Text></Table.Cell>
+                            </Table.Row>
+                            <Table.Row>
                                 <Table.RowHeaderCell>Session duration</Table.RowHeaderCell>
                                 <Table.Cell align="right">3 hours</Table.Cell>
                             </Table.Row>
                             <Table.Row>
                                 <Table.RowHeaderCell>Work duration</Table.RowHeaderCell>
-                                <Table.Cell align="right">3 hours</Table.Cell>
+                                <Table.Cell align="right"><Text color="green">3 hours</Text></Table.Cell>
                             </Table.Row>
                             <Table.Row>
                                 <Table.RowHeaderCell>Breaks duration</Table.RowHeaderCell>
-                                <Table.Cell align="right">3 hours</Table.Cell>
+                                <Table.Cell align="right"><Text color="red">3 hours</Text></Table.Cell>
                             </Table.Row>
                             <Table.Row>
-                                <Table.RowHeaderCell>Total workload (%)</Table.RowHeaderCell>
+                                <Table.RowHeaderCell>Total workload</Table.RowHeaderCell>
                                 <Table.Cell align="right">
                                     <Text color="green">72%</Text>
                                 </Table.Cell>

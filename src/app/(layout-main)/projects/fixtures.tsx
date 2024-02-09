@@ -20,11 +20,11 @@ const columns: IColumn<IProject>[] = [
     {
         title: 'Title',
         value: 'title',
-        formatFunc: (project: IProject) => 
+        formatFunc: (object: IProject) => 
             <Link
                 href={`#`}
             >
-                {project.title}
+                {object.title}
             </Link>
     },
     {
@@ -38,8 +38,7 @@ const columns: IColumn<IProject>[] = [
     {
         title: 'Cash spent',
         value: 'count_cash_spent_total',
-        align: 'right',
-        formatFunc: (customer: IProject) => <Text color="green">{customer.count_cash_spent_total} $</Text>
+        formatFunc: (object: IProject) => <Text color="green">{object.count_cash_spent_total} $</Text>
     },
     {
         title: 'Created',

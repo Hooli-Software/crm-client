@@ -1,10 +1,7 @@
-import {
-    Text,
-    Quote
-} from "@radix-ui/themes"
+'use client'
+import Table from './Table'
 
 
 export default function TransactionsPage() {
-    return <Text size="2">Coming soon... (<Quote>Transactions</Quote>)</Text>
+    return <Table/>
 }
-

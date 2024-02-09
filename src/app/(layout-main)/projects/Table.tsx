@@ -1,6 +1,5 @@
 import { memo } from "react"
 
-
 import { columns, sessions } from './fixtures'
 
 import Pagination from "@/components/Pagination"

@@ -34,7 +34,7 @@ const columns: IColumn<ICustomer>[] = [
         title: 'Cash spent',
         value: 'count_cash_spent_total',
         align: 'right',
-        formatFunc: (customer: ICustomer) => <Text color="green">{customer.count_cash_spent_total} $</Text>
+        formatFunc: (object: ICustomer) => <Text color="green">{object.count_cash_spent_total} $</Text>
     },
     {
         title: 'Registered',

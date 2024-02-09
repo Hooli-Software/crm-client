@@ -23,27 +23,27 @@ const columns: IColumn<ISession>[] = [
     {
         title: 'ID',
         value: 'id',
-        formatFunc: (session: ISession) => 
+        formatFunc: (object: ISession) => 
             <Link
                 href={
-                    session.active ?
-                        `sessions/feed/${session.id}/`
+                    object.active ?
+                        `sessions/feed/${object.id}/`
                     :
-                        `sessions/${session.id}/`
+                        `sessions/${object.id}/`
                 }
             >
                 {
-                    session.active ?
+                    object.active ?
                         <Button
                             variant="soft"
                             color="green"
                         >
-                            #{session.id}
+                            #{object.id}
                             <PlayIcon/>
                         </Button>
                         :
                         <>
-                            #{session.id}
+                            #{object.id}
                         </>
                 }
             </Link>

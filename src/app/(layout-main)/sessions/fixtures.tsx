@@ -51,12 +51,18 @@ const columns: IColumn<ISession>[] = [
     {
         title: 'Order',
         value: 'order',
-        filtered: true
+        filterObjects: [
+            {
+                title: 'Ursas Planet',
+                value: '1'
+            }
+        ]
     },
     {
         title: 'Created',
         value: 'created',
-        align: 'right'
+        align: 'right',
+        sorted: true,
     },
 ]
 

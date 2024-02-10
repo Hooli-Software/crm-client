@@ -2,7 +2,9 @@ import { memo } from "react";
 
 import { Table } from "@radix-ui/themes";
 
-import TableColumnHeaderCell from "./TableColumnHeaderCell"; 
+import TableColumnHeader from "./TableColumnHeader"; 
+import TableColumnHeaderFilter from "./TableColumnHeaderFilter"; 
+import TableColumnHeaderSort from "./TableColumnHeaderSort"; 
 
 
 interface ITable {
@@ -11,12 +13,22 @@ interface ITable {
 }
 
 
+export type SortValue = 'asc' | 'desc' | null
+
 export type IColumn<IModel> = {
     title: string,
     value: keyof IModel,
     formatFunc?: (_: any) => any
-    filtered?: boolean
+    filterObjects?: IFilterObject[]
+    filterCallback?: CallableFunction
+    sorted?: boolean
+    sortCallback?: (_: SortValue) => void
     align?: 'left' | 'right' | 'center'
+}
+
+export type IFilterObject = {
+    title: string
+    value: string
 }
 
 
@@ -26,7 +38,13 @@ function TableCustom(props: ITable) {
             <Table.Row>
                 {
                     props.columns.map((column, index) =>
-                        <TableColumnHeaderCell key={index} {...column} />
+                        column.filterObjects ?
+                            <TableColumnHeaderFilter key={index} {...column} />
+                        :
+                        column.sorted ?
+                            <TableColumnHeaderSort key={index} {...column} />
+                        :
+                            <TableColumnHeader key={index} {...column} />
                     )
                 }
             </Table.Row>
@@ -34,15 +52,15 @@ function TableCustom(props: ITable) {
 
         <Table.Body>
             {
-                props.objects.map(session =>
-                    <Table.Row key={session.id}>
+                props.objects.map((object, index) =>
+                    <Table.Row key={index}>
                         {
                             props.columns.map((column, index) =>
                                 <Table.Cell key={index} align={column.align}>
                                     {
                                         column.formatFunc ?
-                                            column.formatFunc(session) :
-                                            session[column.value]
+                                            column.formatFunc(object) :
+                                            object[column.value]
                                     }
                                 </Table.Cell>
                             )

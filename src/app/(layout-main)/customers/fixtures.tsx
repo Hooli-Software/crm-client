@@ -29,17 +29,20 @@ const columns: IColumn<ICustomer>[] = [
     {
         title: 'Ordered times',
         value: 'count_orders_total',
+        sorted: true
     },
     {
         title: 'Cash spent',
         value: 'count_cash_spent_total',
         align: 'right',
-        formatFunc: (object: ICustomer) => <Text color="green">{object.count_cash_spent_total} $</Text>
+        formatFunc: (object: ICustomer) => <Text color="green">{object.count_cash_spent_total} $</Text>,
+        sorted: true
     },
     {
         title: 'Registered',
         value: 'created',
-        align: 'right'
+        align: 'right',
+        sorted: true
     },
 ]
 

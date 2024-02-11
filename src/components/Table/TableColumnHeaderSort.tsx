@@ -1,5 +1,6 @@
 import {
     memo,
+    Fragment
 } from "react"
 import {
     useRouter,
@@ -54,6 +55,11 @@ function TableColumnHeaderCell(props: IColumn<any>) {
 
     return <>
         <Table.ColumnHeaderCell align={props.align}>
+            {
+                props.align === 'right' &&
+                !getValue() &&
+                    <Gap/>
+            }
             <Button
                 variant="ghost"
                 onClick={() => handleClick()}
@@ -69,9 +75,22 @@ function TableColumnHeaderCell(props: IColumn<any>) {
                 {props.title}
             </Button>
             {
-                !getValue() && <>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</>
+                props.align === 'left' || !props.align &&
+                !getValue() &&
+                    <Gap/>
             }
         </Table.ColumnHeaderCell>
+    </>
+}
+
+
+function Gap() {
+    return <>
+        {
+            Array.from(Array(7)).map((_, index)=>
+                <Fragment key={index}>&nbsp;</Fragment>
+            )
+        }
     </>
 }
 

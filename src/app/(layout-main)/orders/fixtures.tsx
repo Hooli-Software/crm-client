@@ -36,7 +36,21 @@ const columns: IColumn<IOrder>[] = [
                 href={`#`}
             >
                 {object.project}
-            </Link>
+            </Link>,
+        filterObjects: [
+            {
+                title: 'Ursas Planet',
+                value: '1'
+            },
+            {
+                title: 'Kleewish',
+                value: '2'
+            },
+            {
+                title: 'Saleor',
+                value: '3'
+            }
+        ]
     },
     {
         title: 'Status',
@@ -50,21 +64,42 @@ const columns: IColumn<IOrder>[] = [
                 }
             >
                 {object.status}
-            </Text>
+            </Text>,
+        filterObjects: [
+            {
+                title: 'status',
+                value: '1'
+            },
+            {
+                title: 'active',
+                value: 'active'
+            },
+            {
+                title: 'canceled',
+                value: 'canceled'
+            },
+            {
+                title: 'done',
+                value: 'done'
+            }
+        ]
     },
     {
         title: 'Hours',
         value: 'hours',
+        sorted: true
     },
     {
         title: 'Price',
         value: 'price',
-        formatFunc: (object: IOrder) => <Text color="green">{object.price} $</Text>
+        formatFunc: (object: IOrder) => <Text color="green">{object.price} $</Text>,
+        sorted: true
     },
     {
         title: 'Ordered',
         value: 'created',
-        align: 'right'
+        align: 'right',
+        sorted: true
     },
 ]
 

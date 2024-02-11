@@ -30,20 +30,37 @@ const columns: IColumn<IProject>[] = [
     {
         title: 'Owner',
         value: 'owner',
+        filterObjects: [
+            {
+                title: 'kleewish',
+                value: '1'
+            },
+            {
+                title: 'urs',
+                value: '2'
+            },
+            {
+                title: 'saleor',
+                value: '3'
+            }
+        ]
     },
     {
         title: 'Orders count',
         value: 'count_orders_total',
+        sorted: true
     },
     {
         title: 'Cash spent',
         value: 'count_cash_spent_total',
-        formatFunc: (object: IProject) => <Text color="green">{object.count_cash_spent_total} $</Text>
+        formatFunc: (object: IProject) => <Text color="green">{object.count_cash_spent_total} $</Text>,
+        sorted: true
     },
     {
         title: 'Created',
         value: 'created',
-        align: 'right'
+        align: 'right',
+        sorted: true
     },
 ]
 

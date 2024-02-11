@@ -34,17 +34,33 @@ const columns: IColumn<IOrder>[] = [
                 href={`#`}
             >
                 {object.order}
-            </Link>
+            </Link>,
+        filterObjects: [
+            {
+                title: 'Ursas Planet',
+                value: '1'
+            },
+            {
+                title: 'Kleewish',
+                value: '2'
+            },
+            {
+                title: 'Saleor',
+                value: '3'
+            }
+        ]
     },
     {
         title: 'Amount',
         value: 'value',
-        formatFunc: (object: IOrder) => <Text color="green">{object.value} {object.currency}</Text>
+        formatFunc: (object: IOrder) => <Text color="green">{object.value} {object.currency}</Text>,
+        sorted: true
     },
     {
         title: 'Created',
         value: 'created',
-        align: 'right'
+        align: 'right',
+        sorted: true
     },
 ]
 

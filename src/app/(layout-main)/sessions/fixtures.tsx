@@ -55,6 +55,14 @@ const columns: IColumn<ISession>[] = [
             {
                 title: 'Ursas Planet',
                 value: '1'
+            },
+            {
+                title: 'Kleewish',
+                value: '2'
+            },
+            {
+                title: 'Saleor',
+                value: '3'
             }
         ]
     },

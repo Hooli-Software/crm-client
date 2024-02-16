@@ -14,7 +14,10 @@ export default function SessionListPage() {
     return <>
         <Flex justify='between' mb='5' gap='3'>
             <Box></Box>
-            <Button>
+            <Button
+                size='1'
+                variant='soft'
+            >
                 <PlusIcon/>
                 Start new session
             </Button>

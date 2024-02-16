@@ -1,6 +1,11 @@
 import {
     memo,
 } from "react"
+import {
+    useRouter,
+    usePathname,
+    useSearchParams
+} from "next/navigation"
 
 import {
     Select,
@@ -11,14 +16,26 @@ import { IColumn } from "./index"
 
 
 function TableColumnHeaderFilter(props: IColumn<any>) {
+    const router = useRouter()
+    const pathname = usePathname()
+    const searchParams = useSearchParams()
+
+    const handleSelect = (value: string) => {
+        const query = new URLSearchParams(searchParams)
+        query.set(props.filterValue || String(props.value), value)
+        router.replace(`${pathname}?${query.toString()}`)
+    }
+
     return <Table.ColumnHeaderCell align={props.align}>
         {
             props.filterObjects?.length ?
                 <Select.Root
-                    defaultValue={props.filterObjects[0].value}
+                    defaultValue={searchParams.get(props.filterValue || String(props.value)) || props.filterObjects[0].value}
                     onValueChange={
-                        (value) =>
+                        (value) => {
                             props.filterCallback?.(value)
+                            handleSelect(value)
+                        }
                     }
                 >
                     <Select.Trigger variant="ghost"/>

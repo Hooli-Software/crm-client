@@ -21,6 +21,7 @@ export type IColumn<IModel> = {
     formatFunc?: (_: any) => any
     filterObjects?: IFilterObject[]
     filterCallback?: CallableFunction
+    filterValue?: string,
     sorted?: boolean
     sortCallback?: (_: SortValue) => void
     align?: 'left' | 'right' | 'center'

@@ -64,7 +64,8 @@ const columns: IColumn<ISession>[] = [
                 title: 'Saleor',
                 value: '3'
             }
-        ]
+        ],
+        filterValue: 'project'
     },
     {
         title: 'Created',

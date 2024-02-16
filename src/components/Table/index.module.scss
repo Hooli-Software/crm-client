@@ -1,0 +1,7 @@
+.table
+{
+    & :global(.rt-TableRootTable)
+    {
+        min-width: max-content;
+    }
+}

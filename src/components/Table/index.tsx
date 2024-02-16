@@ -6,6 +6,8 @@ import TableColumnHeader from "./TableColumnHeader";
 import TableColumnHeaderFilter from "./TableColumnHeaderFilter"; 
 import TableColumnHeaderSort from "./TableColumnHeaderSort"; 
 
+import css from './index.module.scss'
+
 
 interface ITable {
     columns: IColumn<any>[]
@@ -34,7 +36,7 @@ export type IFilterObject = {
 
 
 function TableCustom(props: ITable) {
-    return <Table.Root mb='4' variant="surface">
+    return <Table.Root mb='4' variant="surface" className={css.table}>
         <Table.Header>
             <Table.Row>
                 {

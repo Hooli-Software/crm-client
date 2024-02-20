@@ -14,6 +14,7 @@ export default function Home() {
           Hello, Hooli Software!
         </Heading>
         <ul>
+          <li><Link href='/login/'>Login page</Link></li>
           <li><Link href='/sessions/'>Session list page</Link></li>
           <li><Link href='/sessions/1/'>Session detail page</Link></li>
           <li><Link href='/sessions/feed/1/'>Session feed page</Link></li>

@@ -1,8 +1,9 @@
 'use client'
+import Link from 'next/link'
 import {
     Flex,
     Box,
-    Button
+    Button,
 } from '@radix-ui/themes'
 import { PlusIcon } from '@radix-ui/react-icons'
 
@@ -16,9 +17,12 @@ export default function TransactionsPage() {
             <Button
                 size='1'
                 variant='soft'
+                asChild
             >
-                <PlusIcon />
-                Add customer
+                <Link href='/customers/create/'>
+                    <PlusIcon />
+                    Add customer
+                </Link>
             </Button>
         </Flex>
         <Table />

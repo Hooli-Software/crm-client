@@ -24,17 +24,16 @@ export default function LoginPage() {
                     <TextField.Input
                         size='3'
                         type='password'
-                        placeholder="Enter your email"
+                        placeholder="Enter your password"
                     />
                     <Button
                         variant='classic'
                         color='green'
                         size='3'
-                        // mt='3'
                     >
-                        Press <Kbd color='red'>F</Kbd> to pay respect
+                        Submit
                     </Button>
-                    <Link>That's not me!</Link>
+                    <Link>That&apos;s not me!</Link>
                 </Flex>
             </Box>
         </Card>
@@ -49,15 +48,14 @@ export default function LoginPage() {
                     <TextField.Input
                         size='3'
                         type='password'
-                        placeholder="Enter your email"
+                        placeholder="Enter your password"
                     />
                     <Button
                         variant='classic'
                         color='green'
                         size='3'
-                        // mt='3'
                     >
-                        Press <Kbd>F</Kbd> to pay respect
+                        Submit
                     </Button>
                 </Flex>
             </Box>
